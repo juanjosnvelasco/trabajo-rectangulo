@@ -8,11 +8,14 @@ package controlador;
  *
  * @author juanc
  */
+
+import modelo.RectanguloModelo;  
+
 public class RectanguloControlador {
 
-    private Rectangulo modelo;
+    private RectanguloModelo modelo;
 
-    public RectanguloControlador(Rectangulo modelo) {
+    public RectanguloControlador(RectanguloModelo modelo) {
         this.modelo = modelo;
     }
 

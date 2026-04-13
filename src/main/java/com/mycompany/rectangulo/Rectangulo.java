@@ -8,9 +8,19 @@ package com.mycompany.rectangulo;
  *
  * @author juanc
  */
+
+import modelo.RectanguloModelo;
+import controlador.RectanguloControlador;
+import vista.RectanguloVista;;
+
 public class Rectangulo {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+
+        RectanguloModelo rect = new RectanguloModelo(0, 0, 4, 5);
+        RectanguloControlador controlador = new RectanguloControlador(rect);
+        RectanguloVista vista = new RectanguloVista(controlador);
+
+        vista.setVisible(true);
     }
 }

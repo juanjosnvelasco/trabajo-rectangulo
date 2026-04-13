@@ -8,11 +8,11 @@ package modelo;
  *
  * @author juanc
  */
-public class Rectangulo extends Figura {
+public class RectanguloModelo extends Figura {
 
     private double x1, y1, x2, y2;
 
-    public Rectangulo(double x1, double y1, double x2, double y2) {
+    public RectanguloModelo(double x1, double y1, double x2, double y2) {
         this.x1 = x1;
         this.y1 = y1;
         this.x2 = x2;
