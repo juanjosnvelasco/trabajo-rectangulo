@@ -9,5 +9,5 @@ package modelo;
  * @author juanc
  */
 public abstract class Figura {
-    public abstract double area();
+    public abstract double calcularArea();
 }

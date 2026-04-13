@@ -12,6 +12,10 @@ public class RectanguloModelo extends Figura {
 
     private double x1, y1, x2, y2;
 
+    public RectanguloModelo() {
+        this(0, 0, 100, 50);
+    }
+
     public RectanguloModelo(double x1, double y1, double x2, double y2) {
         this.x1 = x1;
         this.y1 = y1;
@@ -20,33 +24,38 @@ public class RectanguloModelo extends Figura {
     }
 
     @Override
-    public double area() {
-        return Math.abs((x2 - x1) * (y2 - y1));
+    public double calcularArea() {
+        return Math.abs(x2 - x1) * Math.abs(y2 - y1);
     }
 
-    public void escalar(double factor) {
-        this.x2 = x1 + (x2 - x1) * factor;
-        this.y2 = y1 + (y2 - y1) * factor;
+    public void cambiarEscala(double factor) {
+        if (factor > 0) {
+            x2 = x1 + (x2 - x1) * factor;  // Primera coordenada fija
+            y2 = y1 + (y2 - y1) * factor;
+        }
     }
 
-    public boolean contiene(double x, double y) {
-        return x >= Math.min(x1, x2) && x <= Math.max(x1, x2)
-            && y >= Math.min(y1, y2) && y <= Math.max(y1, y2);
+    public boolean contienePunto(double px, double py) {
+        double minX = Math.min(x1, x2);
+        double maxX = Math.max(x1, x2);
+        double minY = Math.min(y1, y2);
+        double maxY = Math.max(y1, y2);
+        return px >= minX && px <= maxX && py >= minY && py <= maxY;
     }
 
-    
-    public void mover(double dx, double dy) {
-        this.x1 += dx;
-        this.x2 += dx;
-        this.y1 += dy;
-        this.y2 += dy;
+    public void moverHorizontal(double dx) {
+        x1 += dx;
+        x2 += dx;
     }
 
-    public void moverX(double dx) {
-        mover(dx, 0);
+    public void moverVertical(double dy) {
+        y1 += dy;
+        y2 += dy;
     }
 
-    public void moverY(double dy) {
-        mover(0, dy);
-    }
+    // Getters
+    public double getX1() { return x1; }
+    public double getY1() { return y1; }
+    public double getX2() { return x2; }
+    public double getY2() { return y2; }
 }

@@ -11,16 +11,13 @@ package com.mycompany.rectangulo;
 
 import modelo.RectanguloModelo;
 import controlador.RectanguloControlador;
-import vista.RectanguloVista;;
+import vista.RectanguloVista;
 
 public class Rectangulo {
-
     public static void main(String[] args) {
-
-        RectanguloModelo rect = new RectanguloModelo(0, 0, 4, 5);
-        RectanguloControlador controlador = new RectanguloControlador(rect);
-        RectanguloVista vista = new RectanguloVista(controlador);
-
+        RectanguloModelo modelo = new RectanguloModelo();
+        RectanguloVista vista = new RectanguloVista();
+        new RectanguloControlador(modelo, vista);
         vista.setVisible(true);
     }
 }
